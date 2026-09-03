@@ -1,53 +1,31 @@
+#Librerias
 import turtle
 import random
 
-# -----------------------------
-# PANTALLA
-# -----------------------------
-
+#Ajustes de la ventana
 screen = turtle.Screen()
 screen.setup(900, 500)
 screen.bgcolor("black")
-screen.title("DVD Screensaver")
+screen.title("DVD")
 screen.tracer(0)
 
-
-# -----------------------------
-# LOGO
-# -----------------------------
-
+# Diseño del Logo
 logo = turtle.Turtle()
 logo.hideturtle()
 logo.penup()
-
+#Variables de movimiento y posición
 x = 0
 y = 0
-
 dx = 3
 dy = 2
 
-
-# -----------------------------
 # COLORES
-# -----------------------------
 
-colores = [
-    "red",
-    "blue",
-    "green",
-    "yellow",
-    "purple",
-    "cyan",
-    "orange",
-    "white"
-]
+colores = ["red","blue","green","yellow","purple","cyan","orange","white"]
 
 logo.color(random.choice(colores))
 
-
-# -----------------------------
-# ANIMACIÓN
-# -----------------------------
+#Animacion
 
 def animar():
 
