@@ -1,60 +1,91 @@
-#Librerias
 import turtle
 import random
 
-#Ajuste de pantalla
+# -----------------------------
+# PANTALLA
+# -----------------------------
+
 screen = turtle.Screen()
-screen.setup(width=900, height=500)
+screen.setup(900, 500)
 screen.bgcolor("black")
-screen.title("DVD Practica")
+screen.title("DVD Screensaver")
+screen.tracer(0)
 
-#Desactivar animacion automatica
-turtle.tracer(0)
 
-#Logo
+# -----------------------------
+# LOGO
+# -----------------------------
+
 logo = turtle.Turtle()
 logo.hideturtle()
+logo.penup()
 
-#Pocision inicial
 x = 0
 y = 0
 
-#Velocidad de movimiento
 dx = 3
 dy = 2
 
-#Colores
-colors = ["red", "green", "blue", "yellow", "purple", "orange", "white"]
 
-def color_change():
-    logo.color(random.choice(colors))
+# -----------------------------
+# COLORES
+# -----------------------------
 
-color_change()
+colores = [
+    "red",
+    "blue",
+    "green",
+    "yellow",
+    "purple",
+    "cyan",
+    "orange",
+    "white"
+]
 
-#Animacion
+logo.color(random.choice(colores))
 
-while True:
-    #borrar logo
+
+# -----------------------------
+# ANIMACIÓN
+# -----------------------------
+
+def animar():
+
+    global x, y, dx, dy
+
     logo.clear()
 
-    logo.goto(x,y)
+    # Dibujar logo
+    logo.goto(x, y)
 
-    logo.write("DVD", align="center", font=("Arial", 24, "bold"))
+    logo.write(
+        "DVD",
+        align="center",
+        font=("Arial", 40, "bold")
+    )
 
-#Movimiento
+    # Movimiento
     x += dx
     y += dy
 
-#Colision con los bordes
-    if x > 400 or x < -400:
+    # Límites
+    if x >= 400 or x <= -400:
         dx *= -1
-    color_change() 
+        logo.color(random.choice(colores))
 
-    if y > 200 or y < -200:
+    if y >= 200 or y <= -200:
         dy *= -1
-    color_change()
+        logo.color(random.choice(colores))
 
-    #Actualizar pantalla
+    # Actualizar
     screen.update()
-    screen.ontimer(lambda: None, 10)
 
+    # Volver a ejecutar después de 10 ms
+    screen.ontimer(animar, 10)
+
+
+# Iniciar
+animar()
+
+# Mantener ventana abierta
+screen.mainloop()
