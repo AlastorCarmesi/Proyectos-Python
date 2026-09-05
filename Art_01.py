@@ -3,6 +3,7 @@ import turtle
 
 # Configuración de la ventana
 screen = turtle.Screen()
+screen.setup(900, 500)
 screen.bgcolor("black")
 screen.colormode(255)
 
