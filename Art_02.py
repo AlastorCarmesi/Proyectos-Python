@@ -13,6 +13,7 @@ screen.tracer(0)
 logo = turtle.Turtle()
 logo.hideturtle()
 logo.penup()
+
 #Variables de movimiento y posición
 x = 0
 y = 0
@@ -20,27 +21,18 @@ dx = 3
 dy = 2
 
 # COLORES
-
 colores = ["red","blue","green","yellow","purple","cyan","orange","white"]
-
 logo.color(random.choice(colores))
 
 #Animacion
 
 def animar():
-
     global x, y, dx, dy
-
     logo.clear()
 
     # Dibujar logo
     logo.goto(x, y)
-
-    logo.write(
-        "DVD",
-        align="center",
-        font=("Arial", 40, "bold")
-    )
+    logo.write("DVD", align="center", font=("Arial", 40, "bold"))
 
     # Movimiento
     x += dx
