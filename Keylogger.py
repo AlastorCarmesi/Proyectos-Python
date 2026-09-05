@@ -48,8 +48,8 @@ def Stop_script():
     send_data(file_path, dir_ip, port_num)
 
 #Envio de datos mediante socket 
-dir_ip = "10.0.2.15"
-port_num = 443
+dir_ip = "0.0.0.0"
+port_num = 0
 file_path = "log.txt"
 
 #Actualizar la variable word a una cadena vacía
